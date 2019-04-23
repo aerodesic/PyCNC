@@ -1,6 +1,7 @@
 from DistUtilsExtra.auto import setup
 from distutils.command.install import install
 from setuptools import find_packages
+import os
 
 # In case we need hooks
 class post_install(install):
