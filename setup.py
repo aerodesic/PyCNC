@@ -26,4 +26,5 @@ setup(
     keywords          = "CNC 3D printer robot raspberry pi",
     url               = "https://github.com/Nikolay-Kha/PyCNC",
     cmdclass          = { 'install': post_install },
+    data_files        = [('/usr/sbin', ['pycnc', 'runtests.sh' ])],
 )
