@@ -21,7 +21,7 @@ setup(
     author_email      = "2xl@mail.ru",
     description       = "CNC machine controller",
     long_description  = long_description,
-    license           = "MIT"
+    license           = "MIT",
     keywords          = "CNC 3D printer robot raspberry pi",
     url               = "https://github.com/Nikolay-Kha/PyCNC",
     packages          = [ "rhprocntl" ],
