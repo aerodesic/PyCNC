@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+from DistUtilsExtra.auto import setup
+from distutils.command.install import install
+from setuptools import setup, find_packages
 
 try:
     import pypandoc
@@ -6,7 +9,11 @@ try:
 except(IOError, ImportError):
     long_description = open('README.md').read()
 
-from setuptools import setup, find_packages
+# In case we need hooks
+class post_install(install):
+    def run(self):
+        install.run(self)
+
 setup(
     name="pycnc",
     version="1.1.0",
@@ -21,4 +28,5 @@ setup(
     license="MIT",
     keywords="CNC 3D printer robot raspberry pi",
     url="https://github.com/Nikolay-Kha/PyCNC",
+    cmdclass = { 'install': post_install },
 )
