@@ -32,7 +32,8 @@ class __I2CDev(object):
     def read(self, n):
         return os.read(self._dev, n)
 
-i2c = __I2CDev()
+# i2c = __I2CDev()
+i2c = None
 
 # mutex for multi threading requests
 lock = threading.Lock()
@@ -47,6 +48,9 @@ def measure(channel):
     :return: Voltage in Volts.
     """
     global i2c
+    if i2c == None:
+        i2c = __I2CDev()
+
     if channel < 0 or channel > 3:
         raise ValueError("Wrong channel")
     lock.acquire()
