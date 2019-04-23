@@ -1,6 +1,6 @@
 from DistUtilsExtra.auto import setup
 from distutils.command.install import install
-from setuptools import find_packages
+# from setuptools import find_packages
 
 # In case we need hooks
 class post_install(install):
@@ -17,7 +17,7 @@ except(IOError, ImportError):
 setup(
     name              = "pycnc",
     version           = "1.1.0",
-    packages          = find_packages(),
+    packages          = [ 'pycnc' ],
     author            = "Nikolay Khabarov",
     author_email      = "2xl@mail.ru",
     description       = "CNC machine controller",
