@@ -11,7 +11,7 @@ echo '* run with RPi board with connected to pin GPIO21 LED. LED should    *'
 echo '* light up on pullup, set, and DMA test events.                      *'
 echo '**********************************************************************'
 echo '---------------------------Unit tests---------------------------------'
-python -m unittest discover "$@" --pattern="test_*.py"
+python3 -m unittest discover "$@" --pattern="test_*.py"
 echo '-------------------------Integration tests----------------------------'
 app="pycnc"
 if ! which ${app} &> /dev/null; then
