@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from DistUtilsExtra.auto import setup
 from distutils.command.install import install
-from setuptools import setup, find_packages
+from setuptools import find_packages
 
 try:
     import pypandoc
